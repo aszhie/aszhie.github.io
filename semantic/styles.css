@@ -1,0 +1,54 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    margin: 5px 5px 5px 5px;
+}
+
+body {
+    background-color: lightblue;
+}
+
+header {
+    text-align: center;
+    background-color: lightpink;
+    padding: 20px 0 20px 0;
+}
+
+nav {
+    text-align: center;
+    background-color: aliceblue;
+    padding: 10px 0 10px 0;
+}
+
+section {
+    background-color: antiquewhite;
+    width: 55%;
+    float: left;
+    padding: 20px 0 20px 0;
+}
+
+section > * {
+    padding-left: 20px;
+    padding-right: 20px
+}
+
+aside {
+    background-color: gray;
+    width: 43.5%;
+    float: left;
+    padding: 20px 0 20px 0;
+}
+
+aside > * {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+footer {
+    background-color: rgb(255, 198, 129);
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    padding: 30px 0 30px 0;
+}
