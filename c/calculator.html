@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Welcome to my simple calculator page!</h2>
+    <p id="numbers"></p>
+    <p id="result"></p>
+    <p id="resultprod"></p>
+    <p id="resultmod"></p>
+    <script>
+        // Step 1: Get two numbers using prompt
+        let num1 = Number(prompt("Enter the first number:"));
+        let num2 = Number(prompt("Enter the second number:"));
+        // Step 2: Perform operations
+        let sum = num1 + num2;
+        // Step 3: Display numbers and results using document.write()
+        // Display the numbers
+        document.write("Numbers: " + num1 + ", " + num2);
+        document.write("<br>");
+        // Display the sum
+        document.write("Sum: " + (num1 + num2));
+        document.write("<br>");
+        // Display the product
+        document.write("Product: " + (num1 * num2));
+        document.write("<br>");
+        // Display the modulus 
+        document.write("Modulus: " + (num1 % num2));
+        document.write("<br>");
+        // Step 4: Display results using innerHTML
+        // Display the numbers
+        document.getElementById("numbers").innerHTML =
+            "Numbers: " + num1 + ", " + num2;
+        // Display the sum
+        document.getElementById("result").innerHTML =
+            "Sum: " + (num1 + num2);
+        // Display the product
+        document.getElementById("resultprod").innerHTML = 
+            "Product: " + (num1 * num2);
+        // Display the modulus
+        document.getElementById("resultmod").innerHTML = 
+            "Modulus: " + (num1 % num2);
+
+    </script>
+</body>
+
+</html>
