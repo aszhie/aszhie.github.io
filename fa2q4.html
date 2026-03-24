@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarter 4 - FA 2</title>
+
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+
+    <script>
+        function calculateSubtotal(order, quantity) {
+            switch (order) {
+                case "Chicken":
+                    return 75 * quantity;
+                    break;
+                case "Pork":
+                    return 85 * quantity;
+                    break;
+                case "Beef":
+                    return 105 * quantity;
+                    break;
+                default: 
+                    return "Invalid order! Details: " + order + quantity;
+                    break;
+                
+            }
+        }
+
+        function calculateTotal(total, customertype) {
+            if (customertype == "Student") {
+                return total * 0.8;
+            } else if (customertype == "Staff") {
+                return total;
+            } else {
+                return "Invalid total! Details: " + total + customertype;
+            }
+        }
+
+        function printReceipt() {
+            let fname = document.getElementById('fullname').value;
+            let gs = document.getElementById('gradeandsect').value;
+            let foodchoice = document.getElementById('foodmenu').value;
+            let q = document.getElementById('quantity').value;
+            let sfs = document.getElementById('studentorstaff').value;
+
+            let r = document.getElementById('receipt');
+
+            r.innerHTML = "Name: " + fname + "<br>Grade and Section: " + gs + "<br>Chosen meal: " + foodchoice + "<br>Quantity of meal: " + q + "<br>Student/Staff: " + sfs + "<br><br>Price: " + calculateSubtotal(foodchoice, q) + "<br>Total: " + calculateTotal(calculateSubtotal(foodchoice, q), sfs);
+            
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <h3>Canteen</h3>
+    <form onsubmit="return printReceipt()">
+        <label for="fullname">Full name: </label> <br>
+        <input type="text" id="fullname" name="fullname"> <br><br>
+
+        <label for="gradeandsect">Grade and section: </label> <br>
+        <input type="text" name="gradeandsect" id="gradeandsect"> <br><br>
+
+        <label for="foodmenu">Food options: </label> <br>
+        <select name="foodmenu" id="foodmenu">
+            <option value="Chicken">Chicken</option>
+            <option value="Pork">Pork</option>
+            <option value="Beef">Beef</option>
+        </select> <br><br>
+
+        <label for="quantity">Quantity of order: </label> <br>
+        <input type="number" name="quantity" id="quantity"> <br><br>
+
+        <label for="studentorstaff">Student or Faculty/Staff</label> <br>
+        <select name="studentorstaff" id="studentorstaff">
+            <option value="Student">Student</option>
+            <option value="Staff">Staff</option>
+        </select> <br><br>
+
+        <input type="submit" value="Order">
+    </form>
+
+    <hr>
+    <p id="receipt"></p>
+</body>
+</html>
