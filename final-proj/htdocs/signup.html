@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up ;;;</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body">
+    <div class="tab">
+        <img class="logo" src="../media/logo.png" alt="logo">
+        <h3 class="title">sign up;</h3>
+    </div>
+
+    <form action="index.html" onsubmit="return validate()">
+        <label for="fullname">Full name:</label> <span class="error" id="nm_err"></span> <br>
+        <input type="text" name="fullname" id="fullname" required> <br> <br>
+
+        <label for="birthdate">Birth date:</label> <span class="error" id="bd_err"></span> <br>
+        <input type="date" name="birthdate" id="birthdate" required> <br> <br>
+
+        <label for="sex">Sex:</label> <span class="error" id="sx_err"></span> <br>
+        <label for="m">Male</label>
+        <input type="radio" name="sex" id="m" value="m" required> <br>
+        <label for="f">Female</label>
+        <input type="radio" name="sex" id="f" value="f" required> <br>
+        <label for="other">Other</label>
+        <input type="radio" name="sex" id="other" value="other" required> <br> <br>
+
+        <label for="email">E-mail</label> <span class="error" id="em_err"></span> <br>
+        <input type="email" name="email" id="email" required autocomplete="email"> <br> <br>
+
+        <label for="username">Username</label> <span class="error" id="usnm_err"></span> <br>
+        <input type="text" name="username" id="username" required autocomplete="username"> <br><br>
+
+        <label for="pass">Password</label> <span class="error" id="pass_err"></span> <br>
+        <input type="password" name="pass" id="pass" required> <br><br>
+
+        <label for="pass">Confirm password</label> <span class="error" id="conf_err"></span> <br>
+        <input type="password" name="confirm" id="confirm" required> <br>
+
+        <hr class="su">
+
+        <label for="topicquestion1">Have you ever helped someone go through something that could have impacted their mental state negatively?</label> <br>
+        <select name="usualities" id="topicquestion1" required>
+            <option value="notatall">Not at all</option>
+            <option value="somewhat">Somewhat</option>
+            <option value="daily">On the daily</option>
+        </select> <span class="error" id="tq1_err"></span> <br><br>
+
+        <label for="topicquestion2">Are there any activities you do that positively boost your mental health?</label> <span class="error" id="tq2_err"></span> <br>
+        <label for="goingout">Going out</label>
+        <input type="checkbox" name="activities" id="goingout" value="Going out"> <br>
+        <label for="games">Playing games</label>
+        <input type="checkbox" name="activities" id="games" value="Playing games"> <br>
+        <label for="friends">Socializing</label>
+        <input type="checkbox" name="activities" id="friends" value="Socializing"> <br>
+        <label for="music">Listening to music</label>
+        <input type="checkbox" name="activities" id="music" value="Listening to music"> <br> <br>
+
+        <label for="topicquestion2_other">Other:</label>
+        <input type="text" name="otheractivity" id="topicquestion2_other"> <br> <br>
+
+        <label for="mentalrank">How would you rate your mental health on a scale of 0 to 100?</label> <span>(value)</span> <br>
+        <span>0</span>
+        <input type="range" name="mentalrank" id="mentalrank" min="0" max="100" required>
+        <span>100</span> <span class="error" id="rank_err"></span> <br><br>
+
+        <input type="submit" value="Learn more about mental health today!">
+         <span id="success"></span>
+    </form>
+</body>
+</html>
